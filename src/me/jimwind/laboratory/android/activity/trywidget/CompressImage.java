@@ -7,10 +7,12 @@ import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -52,11 +54,26 @@ public class CompressImage extends BaseActivity {
 
 	};
 
+	protected String getAbsoluteImagePath(Uri uri) {
+		// can post image
+		String[] proj = { MediaStore.Images.Media.DATA };
+		Cursor cursor = managedQuery(uri, proj, // Which columns to return
+				null, // WHERE clause; which rows to return (all rows)
+				null, // WHERE clause selection arguments (none)
+				null); // Order-by clause (ascending by name)
+
+		int column_index = cursor
+				.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+		cursor.moveToFirst();
+
+		return cursor.getString(column_index);
+	}
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == REQUEST_SELECT_IMAGE
 				&& resultCode == Activity.RESULT_OK) {
-			Uri uri = data.getData();
+			final Uri uri = data.getData();
 			ContentResolver cr = this.getContentResolver();
 			try {
 				final Bitmap bitmap = BitmapFactory.decodeStream(cr
@@ -70,14 +87,16 @@ public class CompressImage extends BaseActivity {
 					@Override
 					public void run() {
 						// 在这里执行你要想的操作 比如直接在这里更新ui或者调用回调在 在回调中更新ui
-						try {
-							factory.compressAndGenImage(bitmap,
-									SystemConstants.APP_SDCARD_PATH
-											+ "/compress.jpg", 1024);
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+						// try {
+						// factory.compressAndGenImage(bitmap,
+						// SystemConstants.APP_SDCARD_PATH
+						// + "/compress.jpg", 1024);
+						// } catch (IOException e) {
+						// // TODO Auto-generated catch block
+						// e.printStackTrace();
+						// }
+						String path = getAbsoluteImagePath(uri);
+						factory.getImage(path);
 					}
 				});
 
