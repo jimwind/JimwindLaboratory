@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="录音" />
-	<me.jimwind.laboratory.android.view.SoundRecoder
+	<me.jimwind.laboratory.android.view.SoundRecorder
 	    android:id="@+id/sound_recorder_view"
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"

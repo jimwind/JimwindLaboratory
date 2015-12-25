@@ -6,7 +6,7 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 import me.jimwind.laboratory.R;
 import me.jimwind.laboratory.android.activity.ui.BaseActivity;
-import me.jimwind.laboratory.android.view.SoundRecoder;
+import me.jimwind.laboratory.android.view.SoundRecorder;
 
 public class TrySoundRecorder extends BaseActivity {
 	@Override
@@ -19,7 +19,7 @@ public class TrySoundRecorder extends BaseActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				SoundRecoder sound_recorder_view = (SoundRecoder)findViewById(R.id.sound_recorder_view);
+				SoundRecorder sound_recorder_view = (SoundRecorder)findViewById(R.id.sound_recorder_view);
 				sound_recorder_view.setVisibility(View.VISIBLE);
 			}
 		});
