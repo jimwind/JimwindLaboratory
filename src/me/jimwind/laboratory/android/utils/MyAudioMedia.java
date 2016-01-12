@@ -11,7 +11,9 @@ import android.media.MediaPlayer.OnCompletionListener;
 import android.media.MediaRecorder;
 import me.jimwind.laboratory.android.config.SystemConstants;
 import me.jimwind.laboratory.android.interfaces.IAudioMedia;
-
+/*
+ * sound recorder by MediaRecorder
+ */
 public class MyAudioMedia implements IAudioMedia, OnCompletionListener{
 	private MediaRecorder mMediaRecorder;
 	private String mRecordFileDir = SystemConstants.APP_SDCARD_PATH+"records/";
