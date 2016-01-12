@@ -10,10 +10,11 @@ public interface IAudioMedia {
 	public void RecordSound();
 	public void Stop();
 	public void Pause();
+	public void Cancel();
 	public void setListener(Listener listener);
 	//录音或播放时被动停止或暂停
 	public interface Listener{
-		public void OnStop();
-		public void OnPause();
+		public void onStop();
+		public void onPause();
 	}
 }

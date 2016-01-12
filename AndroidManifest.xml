@@ -28,6 +28,7 @@
         </activity>
         <activity android:name=".android.activity.trywidget.CompressImage" />
         <activity android:name=".android.activity.trywidget.TrySoundRecorder" />
+        <activity android:name=".android.activity.trywidget.TryListViewActivity" />
     </application>
 
 </manifest>

@@ -39,7 +39,6 @@
             android:id="@+id/sound_record_bottom_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:orientation="horizontal" >
 
             <TextView
@@ -57,7 +56,25 @@
                 android:layout_width="1px"
                 android:layout_height="fill_parent"
                 android:background="#ff63a309"
-                android:visibility="visible" />
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sound_record_finish_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="完成"
+                android:textColor="#ff63a309"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/sound_record_line2"
+                android:layout_width="1px"
+                android:layout_height="fill_parent"
+                android:background="#ff63a309"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/sound_record_reset_btn"
@@ -68,14 +85,14 @@
                 android:padding="15dp"
                 android:text="重录"
                 android:textColor="#ff63a309"
-                android:visibility="visible" />
+                android:visibility="gone" />
 
             <View
-                android:id="@+id/sound_record_line2"
+                android:id="@+id/sound_record_line3"
                 android:layout_width="1px"
                 android:layout_height="fill_parent"
                 android:background="#ff63a309"
-                android:visibility="visible" />
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/sound_record_save_btn"
@@ -86,7 +103,7 @@
                 android:padding="15dp"
                 android:text="保存"
                 android:textColor="#ff63a309"
-                android:visibility="visible" />
+                android:visibility="gone" />
         </LinearLayout>
     </LinearLayout>
 
