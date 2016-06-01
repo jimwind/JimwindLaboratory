@@ -36,7 +36,7 @@ public class UPAudioMedia implements IAudioMedia, OnCompletionListener {
 	@Override
 	public void onCompletion(MediaPlayer mp) {
 		// TODO Auto-generated method stub
-		mListener.OnStop();
+		mListener.onStop();
 	}
 
 	@Override
@@ -139,6 +139,11 @@ public class UPAudioMedia implements IAudioMedia, OnCompletionListener {
 		} catch (Throwable t){
 			Log.e("jimwind","Recording Failed");
 		}
+	}
+	@Override
+	public void Cancel() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
